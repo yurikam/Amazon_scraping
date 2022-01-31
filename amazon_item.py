@@ -8,8 +8,6 @@ from bs4 import BeautifulSoup
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-# Chromeを起動する関数
-
 def set_driver(headless_flg):
     options = ChromeOptions()
 
@@ -23,8 +21,6 @@ def set_driver(headless_flg):
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--ignore-ssl-errors')
     options.add_argument('--incognito')          # シークレットモードの設定を付与
-
-    # ChromeのWebDriverオブジェクトを作成する。
 
     service=Service(ChromeDriverManager().install())
     return Chrome(service=service, options=options)
